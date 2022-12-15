@@ -73,9 +73,20 @@ const cookieParser = require('cookie-parser')();
 var bodyParser = require('body-parser');
 const stripe = require('stripe')(getStripeKey());
 
+
+
 const pub = express();
 pub.use(cors({ origin: true }));
 
+//SCHEDULE tiden för majl - reminder varje 45 min från 0h till 23h 
+exports.reminderBookings = regionalFunctions
+  .runWith({ memory: '1GB', timeoutSeconds: 60 })
+  .region('europe-west1')
+  .pubsub.schedule('45 0-23 * * *')
+  .onRun(async (context) => {
+    console.log('Running Reminder 15 minute before end time');
+    // await bookingService.reminderEmail15Minut();
+  });
 
 
 // Public endpoints
