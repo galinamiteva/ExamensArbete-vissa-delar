@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        .flex-box {
+            display: flex;
+            flex-direction: column;
+            max-width: 55%;
+        }
+        .logo-box {
+            padding-left: 7rem;
+        }
+        .logo {
+            width: 180px;
+        }
+        img {
+            width: 7rem;
+        }
+        p {
+            font-size: 15px;
+            /*
+            overflow-y: hidden;
+            height: 2.8rem;*/
+        }
+        .no-h {
+            height: 1rem;
+        }
+        .t-p-bold {
+            font-weight: bold;
+            margin: 5px 0px 15px 0px;
+            padding-bottom: 12px;
+            height: 1.3rem;
+        }
+        .amount-bold {
+            font-weight: bold;
+            height: 1.5rem;
+            padding-top: 0.4rem;
+            margin: 0px;
+        }
+        .m-t {
+            margin: 10px 0px 0px 0px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            border-bottom: 1px solid #979797;
+        }
+        .flex-end {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 70%;
+        }
+       
+        .discount-text {
+            color: red;
+        }
+        .footer {
+            width: 100%;
+            margin-top: 4rem;
+        }
+        
+        .description {
+            font-size: 13px;
+            margin: 30px 0px 5px 5px;
+            padding-top: 12px;
+            /*
+            overflow-y: hidden;
+            height: 2.7rem;
+            */
+        }
+        .to-end {
+            float: right;
+            text-align: end;
+        }
+        
+        .quantity {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .center {
+            text-align: end;
+            font-size: 14px;
+
+        }
+        @media (max-width: 1000px) {
+            .flex-box {
+                max-width: 100%;
+            }
+            .logo-box {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                padding-left: 0rem;
+            }
+            table {
+                width: 100%;
+            }
+            img {
+                width: 4.3rem;
+            }
+            .flex-end {
+                width: 100%;
+            }
+            .footer {
+                width: 100%;
+            }
+            .f-padding {                              
+                text-align:end;
+                padding: 0 15px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+   
+    <div>
+        <div class="logo-box">
+            <img src="https://gokaya.se/_next/image?url=%2Fassets%2Flogo.png&w=640&q=75" alt="gokaya-logo" class="logo">
+        </div>
+        <br>
+        <div>
+            <div>
+                <h3>Hi ##CUSTOMER-NAME##, your booking is confirmed.</h3>  
+            </div>
+                <br>
+            <div >                 
+                <p class="no-h"><b>Booking Code: </b><span>##BOOKING-ID##</span></p>                
+                <p class="no-h"><b>Pick up: </b><span>##START-DATE##</span></p>
+                <p class="no-h"><b>Return: </b><span>##END-DATE##</span></p>
+                <p class="no-h"><b>Location: </b><span>##SITE-LOCATION##</span></p>
+                <p class="no-h"><b>Address: </b> <span>##SITE-ADDRESS##</span></p>               
+            </div>
+                <br>
+            <div>                    
+                <p class="no-h"><b>Name: </b> <span>##FULL-CUSTOMER-NAME##</span></p>
+                <p class="no-h"><b>Email: </b> <span>##CUSTOMER-EMAIL##</span></p>
+                <p class="no-h"><b>Phone: </b><span>##CUSTOMER-PHONE##</span></p>
+                <p class="no-h"><b>Extra info: </b><span>##EXTRA-INFO##</span></p>
+            </div>            
+                <br>
+            <div id="data">
+                <table>
+                    <tbody>
+                        ##PRODUCT-ITEMS##
+                                               
+                    </tbody>
+                </table>
+                <div class="to-end">
+                    <div><p class="amount-bold m-t">VAT: <span>##TOTAL-VAT##:-</span></p></div>
+                    <div><p class="amount-bold">Discount: <span class="discount-text">##TOTAL-DISCOUNT##:-</span></p></div>
+                    <div><p class="amount-bold">Discount code: <span>##DISCOUNT-CODE##</span></p></div>
+                    <div><p class="amount-bold">Total SEK (VAT incl): <span>##TOTAL-COST##:-</span></p></div>
+                </div>             
+                
+            </div>
+            <br> <br><br> <br>
+            <div class="footer">
+                <p class="f-padding">##SITE-INFOTEXT##</p>
+            </div>
+        </div>
+    </div>    
+       
+    
+  </body>
+</html>
